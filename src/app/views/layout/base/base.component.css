@@ -1,0 +1,24 @@
+@media only screen and (max-width: 767px) {
+  #asideBg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100000000;
+    background-color: #00000080;
+  }
+}
+::ng-deep .p-toast-bottom-right {
+  bottom: 40px !important;
+  right: 20px !important;
+}
+
+::ng-deep .p-toast-bottom-left {
+  bottom: 40px !important;
+  left: 20px !important;
+}
+
+::ng-deep .p-toast .p-toast-message .p-toast-message-content .p-toast-message-text {
+  margin: 0 5px;
+}
+
+

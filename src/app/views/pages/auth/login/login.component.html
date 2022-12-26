@@ -1,0 +1,106 @@
+<!-- {{test | json}}
+<button type="button" pButton pRipple (click)="mainService.showTopCenter('opopopopo')" label="Top Center" class="p-button-warning"></button> -->
+<p-toast [position]="mainService.otherLang == 'AR' ? 'bottom-right': 'bottom-left'" key="bl"></p-toast>
+
+<div class="bg-main d-flex dir-rtl" [style.minHeight.vh]="100">
+  <div class="bg-white m-auto overflow-auto p-2 px-md-5 py-md-5 rounded-5">
+
+    <form [formGroup]="loginForm" [style.direction]="'inherit'" [style.width.px]="350">
+      <div class="row justify-content-center mx-0">
+        <img src="assets/images/logo.png" class="mb-5 p-0" [style.width.px]="180" alt="">
+      </div>
+
+      <div class="row mx-0">
+        <div class="col my-2">
+          <input id="float-input" class="w-100 text-start rounded-5" placeholder="Username" type="text" pInputText
+            formControlName="UserName">
+        </div>
+        <div class="col d-flex align-items-center p-0" [style.maxWidth.px]="62">
+          <span class="bg-white d-flex justify-content-center align-items-center rounded-circle boxShadowLikeBtn"
+            style=" height: 50px; width: 50px;">
+            <i class="pi pi-user fs-4 text-main"></i>
+          </span>
+        </div>
+      </div>
+
+
+      <!-- <div class="row mx-0">
+        <div class="col my-2">
+          <div class="">
+            <p-message *ngIf="this.login['UserName'].errors?.['required'] && submit " severity="error"
+              class="mt-4n d-block" text="&nbsp;&nbsp;يجب كتابة الإيميل"></p-message>
+            <p-message *ngIf="this.login['UserName'].errors?.['UserName'] && submit " severity="error"
+              class="mt-4n d-block" text="&nbsp;&nbsp;هذا الايميل غير صالح "></p-message>
+          </div>
+        </div>
+
+      </div> -->
+
+
+
+
+
+
+      <div class="row mx-0">
+        <div class="col my-2">
+          <p-password id="Password" formControlName="Password" pInputText placeholder="Password"
+            class="text-start p-0 border-0 w-100 dir-ltr" [toggleMask]="true"></p-password>
+        </div>
+        <div class="col d-flex align-items-center p-0" [style.maxWidth.px]="62">
+          <span class="bg-white d-flex justify-content-center align-items-center rounded-circle boxShadowLikeBtn"
+            style=" height: 50px; width: 50px;">
+            <i class="pi pi-unlock fs-4 text-main"></i>
+          </span>
+        </div>
+      </div>
+
+
+
+
+      <div class="row mx-0">
+        <div class="col my-2">
+          <p class="w-100 text-start rounded-5" pInputText (click)="rememberMe = !rememberMe"> تذكرني</p>
+        </div>
+        <div class="col d-flex align-items-center p-0" [style.maxWidth.px]="62">
+          <span (click)="rememberMe = !rememberMe" class="bg-white d-flex justify-content-center align-items-center rounded-circle boxShadowLikeBtn {{rememberMe ? 'text-white bg-main':'bg-white text-main'}}"
+            style=" height: 50px; width: 50px;">
+            <i class="pi fs-4 {{rememberMe ? 'pi-check':'pi-times'}}" ></i>
+          </span>
+        </div>
+      </div>
+
+
+
+      <!-- <div class="col-10 my-2">
+        <div class="">
+          <p-message *ngIf="this.login['Password'].errors?.['required'] && submit" severity="error"
+            class="mt-4n d-block mb-4" text=" &nbsp;&nbsp;يجب كتابة كلمة المرور"></p-message>
+        </div>
+      </div> -->
+
+
+
+
+
+
+      <div class="row mx-0">
+        <div class="col my-2">
+          <button pButton pRipple type="submit"
+            class="p-button-raised p-button-text bg-white text-main justify-content-center w-100" (click)="Login()">
+            تسجيل الدخول
+          </button>
+        </div>
+        <div class="col d-flex align-items-center p-0" [style.maxWidth.px]="62">
+          <span class="bg-white d-flex justify-content-center align-items-center rounded-circle boxShadowLikeBtn"
+            style=" height: 50px; width: 50px;">
+            <i class="pi pi-sign-in fs-4 text-main"></i>
+          </span>
+        </div>
+      </div>
+
+
+
+
+    </form>
+  </div>
+</div>

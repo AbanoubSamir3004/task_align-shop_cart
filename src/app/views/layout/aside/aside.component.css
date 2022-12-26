@@ -1,0 +1,53 @@
+.openAside {
+  width: 288px;
+}
+.closeAside {
+  width: 0px;
+}
+.btnAside {
+  background-color: white;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  color: var(--main-color);
+  border-radius: 0 6px 6px 0 !important;
+}
+.btnAside div {
+  background-color: var(--main-color);
+  color: white;
+  align-items: center;
+  border-radius: 6px;
+}
+.btnAside.active div,
+.btnAside:focus div,
+.btnAside:active div,
+.btnAside:hover div {
+  background-color: white;
+  color: var(--main-color);
+  align-items: center;
+  border-radius: 6px;
+}
+
+.accordion-button.noDown::after {
+  content: unset;
+  color: var(--main-color);
+}
+
+.btnAside.active::after,
+.btnAside:focus::after,
+.btnAside:active::after,
+.btnAside:hover::after {
+  color: white;
+}
+.accordion-button:not(.collapsed) {
+  color: var(--main-color);
+}
+
+.btn:hover {
+  background-color: var(--main-color) !important;
+  color: white !important;
+  align-items: center;
+  border-radius: 6px;
+}
