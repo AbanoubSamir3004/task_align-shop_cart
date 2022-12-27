@@ -21,7 +21,6 @@ import { MessageService, PrimeNGConfig } from 'primeng/api';
 export class LoginComponent implements OnInit {
   submit: boolean = false;
   role: string = '';
-  rememberMe: boolean = false;
 
   constructor(
     private loginService: LoginService,
@@ -31,14 +30,12 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private primengConfig: PrimeNGConfig,
     private messageService: MessageService,
-    @Inject(DOCUMENT) private document: Document
   ) {}
   date = new Date();
 
   loginForm = new FormGroup({
-    UserName: new FormControl('', [Validators.required]),
-    Password: new FormControl('', [Validators.required]),
-    RememberMe: new FormControl(false, [Validators.required]),
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
   });
 
   get login() {
@@ -46,68 +43,37 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    const lang = localStorage.getItem('lang');
-    let headTag = this.document.getElementsByTagName(
-      'head'
-    )[0] as HTMLHeadElement;
-    let existingLink = this.document.getElementById(
-      'langCss'
-    ) as HTMLLinkElement;
-    let bundleName = lang === 'AR' ? 'arabicStyle.css' : 'englishStyle.css';
-    if (existingLink) existingLink.href = bundleName;
-    else {
-      let newLink = this.document.createElement('link');
-      newLink.rel = 'stylesheet';
-      newLink.type = 'text/css';
-      newLink.id = 'langCss';
-      newLink.href = bundleName;
-      headTag.appendChild(newLink);
-
-      let mainStyle = this.document.createElement('link');
-      mainStyle.rel = 'stylesheet';
-      mainStyle.type = 'text/css';
-      mainStyle.id = 'langCss';
-      mainStyle.href = 'style.css';
-      headTag.appendChild(mainStyle);
-    }
     this.primengConfig.ripple = true;
   }
-test:any
   Login() {
     this.submit = true;
-    if (this.loginForm.invalid) return;
-
     if (this.submit && this.loginForm.valid) {
       this.loginService.login(this.loginForm.value).subscribe(
         (res: Login) => {
-          this.role = res.data.roleName;
-          localStorage.setItem('token_Azhar', `Bearer ${res.data.token}`);
-          localStorage.setItem('role', this.role);
+          localStorage.setItem('token', `Bearer ${res.token}`);
         },
         (error: ErrorInterface) => {
-// this.test = error.errors.join("")
-// this.messageService.add(this.mainService.toastErrorHandler(this.test))
           this.mainService.handleError(error);
           error.errors.forEach((err: any) => {
             this.messageService.add(this.mainService.toastErrorHandler(err));
           });
         },
         () => {
-          this.messageService.add(
-            this.mainService.toastSuccessRequest('تم تسجيل الدخول بنجاح')
-          );
           this.clearSave();
         }
       );
-    }
+    }else return
   }
 
   clearSave() {
     this.submit = false;
-    let pageBeforeLogin = this.route.snapshot.queryParams['returnUrl'];
-    if (pageBeforeLogin) this.router.navigateByUrl(pageBeforeLogin);
+    let pageBeforLogin = this.route.snapshot.queryParams['returnUrl'];
+    if (pageBeforLogin) this.router.navigateByUrl(pageBeforLogin);
     else {
       this.router.navigateByUrl('/');
     }
+    this.messageService.add(
+      this.mainService.toastSuccessRequest('تم تسجيل الدخول بنجاح')
+    );
   }
 }

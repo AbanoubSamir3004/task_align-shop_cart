@@ -439,10 +439,6 @@
     left: 0;
     right: unset;
   }
-  .userProfileAr.dropdown-menu[data-bs-popper] {
-    right: 0;
-    left: unset;
-  }
   .mainOpenAside {
     transition-duration: 0.5s;
     width: calc(100vw - 288px);
