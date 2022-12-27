@@ -1,47 +1,13 @@
 <header [style]="'height: ' + mainService.navHeight +  'px ;'">
   <nav class=" position-relative bg-white border-bottom {{mainService.asideStatus ? 'border-start':''}}"
     style="z-index: 999;">
-    <div class="align-items-center container-fluid d-flex">
+    <div class="align-items-center justify-content-between container-fluid d-flex">
       <h1 class="fs-6 my-auto d-none d-xl-block">
-
-        مشروع إدارة الجودة لمشاريع الإصحاح البيئي بمدينة الرياض
-
-
+        امازون
       </h1>
-      <div class="ms-auto d-flex align-items-center">
-        <ul class="navbar-nav mx-auto mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="bg-transparent dropdown-toggle nav-link py-1 text-white" href="javascript:void(0);"
-              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="assets/images/profile.png" class="imgProfile" alt="">
-            </a>
-            <ul
-              class="dropdown-menu rounded-0 {{ mainService.otherLang === 'EN' ? 'userProfileEn' : 'userProfileAr'}} position-absolute"
-              aria-labelledby="navbarDropdown">
-              <li>
-                <a class="dropdown-item" routerLink="#">
-                  الصفحة الشخصية
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li>
-                <a class="dropdown-item" routerLink="#">
-                  الإعدادات
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <button type="button" class="btn bg-main text-white py-0 text-nowrap ms-2" (click)="reloadLang()">
-          {{mainService.otherLang}} <i class="pi pi-globe"></i>
-        </button>
-
-        <button type="button" class="btn btn-outline-danger ms-2 px-3 py-0" (click)="mainService.logout()">
-          <i class="pi pi-power-off fw-bold"></i>
-        </button>
-      </div>
+      <button type="button" class="btn btn-outline-danger ms-auto px-3 py-0 my-1" (click)="mainService.logout()">
+        <i class="pi pi-power-off fw-bold"></i>
+      </button>
     </div>
   </nav>
 </header>

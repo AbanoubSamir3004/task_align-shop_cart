@@ -8,9 +8,9 @@ import { Login } from '../models/login';
 export class LoginService {
   constructor(private http:HttpClient) {}
 
-  base_URL: string = env.apiPath + 'Auth/';
+  base_URL: string = env.domainUrl + 'auth/';
 
   login(data: any) {
-    return this.http.post<Login>(this.base_URL + 'LoginUser/', data);
+    return this.http.post<Login>(this.base_URL + 'login/', data);
   }
 }

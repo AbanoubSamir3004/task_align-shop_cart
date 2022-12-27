@@ -12,18 +12,22 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private router: Router, private translateService: TranslateService, private mainService: MainService) { }
+  constructor(
+    private router: Router,
+    private translateService: TranslateService,
+    private mainService: MainService
+  ) {}
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem('token_Azhar');
+    const token = localStorage.getItem('token');
     if (token) {
       req = req.clone({
         headers: req.headers.set('authorization', token),
       });
     }
-  
+
     return next.handle(req);
   }
 }

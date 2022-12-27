@@ -45,7 +45,7 @@
   color: var(--main-color);
 }
 
-.btn:hover {
+.btn:hover ,.btn.active{
   background-color: var(--main-color) !important;
   color: white !important;
   align-items: center;
