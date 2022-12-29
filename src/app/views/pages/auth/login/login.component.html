@@ -5,12 +5,12 @@
 
     <form [formGroup]="loginForm" [style.direction]="'inherit'" [style.width.px]="350">
       <div class="row justify-content-center mx-0">
-        <img src="assets/images/logo.png" class="mb-5 p-0" [style.width.px]="180" alt="">
+        <img src="assets/images/logo.png" class="mb-5 p-0" [style.width.px]="140" alt="">
       </div>
 
       <div class="row mx-0">
         <div class="col my-2">
-          <input id="float-input" class="w-100 text-start rounded-5" placeholder="Username" type="text" pInputText
+          <input id="float-input" class="w-100 text-end rounded-5" placeholder="Username" type="text" pInputText
             formControlName="username">
         </div>
         <div class="col d-flex align-items-center p-0" [style.maxWidth.px]="62">
@@ -46,7 +46,7 @@
         <div class="col my-2">
           <button pButton pRipple type="submit"
             class="p-button-raised p-button-text bg-white text-main justify-content-center w-100" (click)="Login()">
-            تسجيل الدخول
+             Login
           </button>
         </div>
         <div class="col d-flex align-items-center p-0" [style.maxWidth.px]="62">
@@ -62,7 +62,9 @@
         <div class="col my-2">
           <button pButton pRipple type="submit"
             class="p-button-raised p-button-text bg-white text-main justify-content-center w-100" routerLink="register">
-            قم بإنشاء حساب خاص بك
+           If you don't have account
+           <br>
+           Register
           </button>
         </div>
         <div class="col d-flex align-items-center p-0" [style.maxWidth.px]="62">

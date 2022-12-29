@@ -16,10 +16,14 @@ import { PaginatorModule } from 'primeng/paginator';
 import { GalleriaModule } from 'primeng/galleria';
 import { CheckboxModule } from 'primeng/checkbox'
 import { ToggleButtonModule } from 'primeng/togglebutton';
+import { CardModule } from 'primeng/card';
+import {RatingModule} from 'primeng/rating';
 
 @NgModule({
   imports: [],
   exports: [
+    RatingModule,
+    CardModule,
     TableModule,
     DialogModule,
     InputTextModule,

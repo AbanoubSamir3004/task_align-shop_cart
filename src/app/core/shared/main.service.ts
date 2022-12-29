@@ -5,9 +5,10 @@ import { MessageService, PrimeNGConfig } from 'primeng/api';
   providedIn: 'root',
 })
 export class MainService {
-  navHeight: number = 43;
+  navHeight: number = 35;
   footerHeight: number = 36;
   asideStatus: boolean = true;
+  titlePage:string='';
 
   constructor(
     private router: Router,
@@ -36,34 +37,23 @@ export class MainService {
       });
     }
   }
-  // handle error by message toast
-  toastErrorHandler(error: any): Object {
+
+  showSuccessMSG(msg: any) {
     this.primengConfig.ripple = true;
-    return {
+    this.messageService.add({
       key: 'bl',
-      severity: 'error',
-      summary: 'خطأ في البيانات',
-      detail: error,
-      sticky: true,
-    };
+      severity: 'success',
+      summary: msg,
+    });
   }
-  showTopCenter(msg: any) {
+  showErrorMSG(msg: any) {
     this.primengConfig.ripple = true;
     this.messageService.add({
       key: 'bl',
       severity: 'error',
-      summary: 'خطأ',
+      summary: 'Error',
       detail: msg,
-      sticky: true,
     });
   }
 
-  toastSuccessRequest(message: any): Object {
-    return {
-      key: 'bl',
-      severity: 'success',
-      summary: message,
-      sticky: true,
-    };
-  }
 }
