@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/angular-fontawesome';
 import {
   faAnglesLeft,
-  faAnglesRight, faHome, faListCheck
+  faAnglesRight, faHome, faListCheck, faMinus, faPlus, faTrash
 } from '@fortawesome/free-solid-svg-icons';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -49,6 +49,9 @@ export class MainModule {
       faListCheck,
       faAnglesLeft,
       faAnglesRight,
+      faTrash,
+      faPlus,
+      faMinus
     );
   }
 }

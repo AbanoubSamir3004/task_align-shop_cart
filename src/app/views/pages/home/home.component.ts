@@ -12,8 +12,7 @@ import { HomeService } from 'app/core/services/home.service';
 })
 export class HomeComponent implements OnInit {
   products: Products[] = [];
-  imgPath: string = env.domainUrl + 'img/';
-  showDetails:boolean = false;
+  showDetails: boolean = false;
   productsInCart: Products[] = [];
 
   constructor(
@@ -40,24 +39,48 @@ export class HomeComponent implements OnInit {
       },
       () => {
         console.log('getAllProducts');
+        for (let i = 0; i < this.products.length; i++) {
+           this.products[i].quantity = 0
+          
+        }
       }
     );
   }
-veiwCart(){
-  this.showDetails= true
-}
+  veiwCart() {
+    this.showDetails = true;
+  }
 
   AddToCart(product: Products) {
-// for (let i = 0; i < this.productsInCart.length; i++) {
-//   if (this.productsInCart[i].id == product.id) {
-
-//   }
-  
-// }
-
-
-
+    product.quantity = 1;
     this.productsInCart.push(product);
-    
   }
+  clearCart() {
+    this.productsInCart = [];
+  }
+  removeItem(index: number, id: number) {
+
+    // const index = this.productsInCart.findIndex((e) => e.id == id);
+    this.productsInCart.splice(index, 1);
+const indexProduct =  this.products.findIndex((e) => e.id == id);
+this.products[indexProduct].quantity = 0
+  }
+  plusOne(product: Products) {
+    if (product.quantity) {
+      product.quantity = product.quantity + 1;
+    }
+  }
+  minusOne(product: Products) {
+    if (product.quantity) {
+      product.quantity = product.quantity - 1;
+    }
+    if (product.quantity == 0) {
+      const indexProduct =  this.productsInCart.findIndex((e) => e.id == product.id);
+      this.productsInCart.splice( indexProduct , 1)
+    }
+  }
+
+
+
+
+
 }

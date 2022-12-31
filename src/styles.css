@@ -10,9 +10,6 @@ body {
   overflow-x: hidden;
 }
 
-body.test {
-  font-family: Amiri !important;
-}
 ::-webkit-scrollbar {
   height: 8px;
   width: 8px;
@@ -44,10 +41,7 @@ a {
 }
 .p-component,
 .p-inputtext {
-  /* padding-top:6px;
-    padding-bottom: 6px; */
   font-family: myFirstFont !important;
-  /* width: -webkit-fill-available; */
   border-radius: 32px;
 }
 .p-inputtext.p-password-input {
@@ -173,11 +167,7 @@ p-table svg {
   direction: rtl;
 }
 
-/* .form-control.is-valid,
-  .was-validated .form-control:valid {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%ffffffff' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
-  } */
-
+ 
 .form-control.is-valid,
 .was-validated .form-control:valid {
   border-color: var(--main-color);
@@ -216,13 +206,7 @@ p-table svg {
 .p-dropdown .p-dropdown-clear-icon {
   right: unset;
   left: 2.357rem;
-}
-fa-icon.text-secondary {
-  top: 67%;
-  transform: translateY(-50%);
-  left: 20px;
-  font-size: 18px;
-}
+} 
 @media only screen and (min-width: 992px) {
   .inputLables {
     text-align: end;
@@ -255,10 +239,6 @@ fa-icon.text-secondary {
   display: inline-block;
   padding: 0 4px;
 }
-.closeSelectAr .p-dropdown .p-dropdown-clear-icon {
-  color: #6c757d !important;
-  right: 4px !important;
-}
 .form-control.is-valid,
 .was-validated .form-control:valid {
   padding-right: calc(1.5em + 0.75rem);
@@ -287,18 +267,6 @@ fa-icon.text-secondary {
 .p-dropdown.was-validated .form-control:valid {
   padding-left: calc(1.5em + 3px) !important;
 }
-.border-success {
-  border-color: var(--main-color) !important;
-}
-.apexcharts-toolbar {
-  display: none !important;
-}
-.p-toast-top-right {
-  top: 85px !important;
-}
-.text-orange {
-  color: #ff9900;
-}
 .text-main {
   color: var(--main-color) !important;
 }
@@ -308,10 +276,6 @@ fa-icon.text-secondary {
     var(--main-color-rgb),
     var(--bs-bg-opacity)
   ) !important;
-}
-.bg-orange {
-  --bs-bg-opacity: 1;
-  background-color: rgba(255, 153, 0, var(--bs-bg-opacity)) !important;
 }
 .h-inherit {
   height: inherit;
@@ -333,38 +297,6 @@ p.form-control {
 
 .w-fit {
   width: fit-content;
-}
-.navbar-toggler {
-  border: var(--bs-border-width) solid rgb(255 255 255);
-}
-.navbar-toggler:focus {
-  color: #ffffff80;
-}
-.gm-ui-hover-effect img {
-  width: 25px !important;
-  height: 25px !important;
-}
-.gm-style-iw-d {
-  padding: 5% !important;
-  min-width: 160px !important;
-  overflow: unset !important;
-  font-family: "Cairo", "Tajawal", sans-serif !important;
-}
-.gm-style .gm-style-iw-c {
-  background-color: white !important;
-  border-radius: 5px !important;
-  padding: 12px !important;
-  box-shadow: 0 2px 7px 1px rgb(0 0 0 / 3%) !important;
-  font-size: 14px;
-}
-.dropdown-item.active,
-.dropdown-item:active {
-  color: white !important;
-  text-decoration: none;
-  background-color: var(--main-color);
-}
-.p-datatable .p-sortable-column .p-sortable-column-icon {
-  margin: 0 5px 3px;
 }
 .p-dialog-mask.p-component-overlay.p-component-overlay-enter.p-dialog-mask-scrollblocker {
   z-index: 111111 !important;
@@ -421,24 +353,7 @@ p.form-control {
 .bg-opacity-100 {
   --bs-bg-opacity: 1;
 }
-.p-dropdown-panel .p-dropdown-header .p-dropdown-filter {
-  margin-right: inherit;
-}
-.ng-trigger.ng-trigger-overlayAnimation.p-dropdown-panel.p-component.ng-star-inserted {
-  z-index: 999999 !important;
-  right: 0;
-  left: unset;
-}
-.p-dropdown .p-dropdown-label {
-  text-align: start;
-}
-.ng-trigger.ng-trigger-overlayAnimation.ng-tns-c84-2.p-datepicker.p-component.ng-star-inserted {
-  z-index: 111111 !important;
-}
-.userProfileEn.dropdown-menu[data-bs-popper] {
-  left: 0;
-  right: unset;
-}
+
 .mainOpenAside {
   transition-duration: 0.5s;
   width: calc(100vw - 288px);
@@ -453,103 +368,8 @@ p.form-control {
 .closeAside {
   width: 0px;
 }
-i {
-  cursor: pointer;
-}
-@keyframes hvr-icon-wobble-horizontal {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  50% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-.h-available {
-  height: -webkit-fill-available;
-}
-.map-container {
-  width: 100% !important;
-  max-height: -webkit-fill-available !important;
-  /* height: -webkit-fill-available !important; */
-}
-.p-multiselect-panel .p-multiselect-header .p-checkbox {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-.p-multiselect-panel .p-multiselect-items .p-multiselect-item .p-checkbox {
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
-}
-.p-multiselect:not(.p-disabled):hover {
-  border-color: #ced4da;
-}
-.p-multiselect,
-.p-dropdown {
-  border-radius: 6px;
-}
-p-multiselect.ng-dirty.ng-invalid > .p-multiselect {
-  border: unset !important;
-}
-p-multiselect .p-multiselect {
-  border: 0 !important;
-}
-.border-white-bold {
-  border: 7px solid white;
-}
-.p-message .p-message-icon {
-  font-size: 13px !important;
-}
-p-calendar span input[type="text"] {
-  border-radius: 6px;
-}
-.p-chips .p-chips-multiple-container .p-chips-input-token input {
-  font-family: unset;
-}
-.mapFull,
-.map-container {
-  height: 500px !important;
-  width: 100% !important;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
 
-.myCard {
-  background-color: white;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  /* box-shadow: 0px 0px 18px -8px; */
-  border: 1px solid var(--main-color);
-}
-.myCard .myCardHead {
-  border-bottom: 1px solid var(--main-color);
-  margin: 0;
-  padding: 8px 16px;
-  font-size: 24px;
-  display: block;
-  background-color: white;
-  border-radius: 12px 12px 0 0px;
-  color: var(--main-color);
-  text-align: center;
-}
 
-i {
-  cursor: pointer;
-}
-.alter-danger {
-  background-color: #ffc0cb80;
-}
-/* .ngx-charts {
-    border-radius: 12px !important;
-  } */
-td {
-  white-space: nowrap;
-}
 
 .p-datatable.p-datatable-striped .p-datatable-tbody > tr:nth-child(even),
 th {
@@ -559,25 +379,11 @@ th {
   border: 0 !important;
   border-bottom: 1px solid #e9ecef !important;
 }
-::ng-deep .p-accordion p-accordiontab .p-accordion-tab {
-  margin: 15px 0;
-}
-.details p {
-  padding: 15px;
-  border: 1px solid #eee;
-  margin-bottom: 0;
-}
-.details span {
-  max-width: 185px;
-}
-.p-paginator-bottom.p-paginator {
-  border-radius: 0 0 12px 12px !important;
-}
-.p-element.p-datatable-tbody {
-  border-radius: 0 0 12px 12px !important;
-}
 
 .boxShadowLikeBtn {
   box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
     0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+.cursor-pointer{
+  cursor: pointer;
 }
