@@ -1,3 +1,111 @@
-<p>
-  register works!
-</p>
+<p-toast position="bottom-left" key="bl"></p-toast>
+
+<div class="bg-opacity-10 bg-secondary d-flex p-3" [style.minHeight.vh]="100">
+  <div class="bg-white boxShadow-6 m-auto overflow-auto p-2 px-md-5 py-md-5 rounded-5">
+
+    <form [formGroup]="registerForm" [style.direction]="'inherit'" [style.maxWidth.px]="950">
+      <div class="row justify-content-center mx-0">
+        <img src="assets/images/logo.png" class="mb-3 p-0" [style.width.px]="140" alt="">
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 mx-0">
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="email" formControlName="email" type="text" class="form-control" pInputText>
+            <label for="email">Email</label>
+          </span>
+        </div>
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="username" formControlName="username" type="text" class="form-control" pInputText>
+            <label for="username">User Name</label>
+          </span>
+        </div>
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="firstname" [ngModelOptions]="{standalone: true}" [(ngModel)]="name.firstname" type="text" class="form-control" pInputText>
+            <label for="firstname">First Name</label>
+          </span>
+        </div>
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="lastname" [ngModelOptions]="{standalone: true}" [(ngModel)]="name.lastname" type="text" class="form-control" pInputText>
+            <label for="lastname">Last Name</label>
+          </span>
+        </div>
+        
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="phone" formControlName="phone" type="text" class="form-control" pInputText>
+            <label for="phone">Phone</label>
+          </span>
+        </div>
+        
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="password" formControlName="password" type="text" class="form-control" pInputText>
+            <label for="password">Password</label>
+          </span>
+        </div>
+
+
+
+
+
+
+
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="city" [ngModelOptions]="{standalone: true}" [(ngModel)]="address.city" type="text" class="form-control" pInputText>
+            <label for="city"> City</label>
+          </span>
+        </div>
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="street" [ngModelOptions]="{standalone: true}" [(ngModel)]="address.street" type="text" class="form-control" pInputText>
+            <label for="street"> Street</label>
+          </span>
+        </div>
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="number" [ngModelOptions]="{standalone: true}" [(ngModel)]="address.number" type="text" class="form-control" pInputText>
+            <label for="number"> Number</label>
+          </span>
+        </div>
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="zipcode" [ngModelOptions]="{standalone: true}" [(ngModel)]="address.zipcode" type="text" class="form-control" pInputText>
+            <label for="zipcode"> Zipcode</label>
+          </span>
+        </div>
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="lat" [ngModelOptions]="{standalone: true}" [(ngModel)]="address.geolocation.lat" type="text" class="form-control" pInputText>
+            <label for="lat"> Lat</label>
+          </span>
+        </div>
+        <div class="col my-3">
+          <span class="p-float-label">
+            <input id="long" [ngModelOptions]="{standalone: true}" [(ngModel)]="address.geolocation.long" type="text" class="form-control" pInputText>
+            <label for="long"> Long</label>
+          </span>
+        </div>
+
+        <div class="col-12 col-md-12 my-2">
+          <button type="button" class="btn btn-primary w-100 rounded-pill" (click)="Register()"> Register </button>
+        </div>
+      </div>
+
+
+      <div class="row mx-0 mt-3">
+        <div class="col my-3">
+          <button  type="button"
+            class="btn btn-light border px-3 rounded-pill" routerLink="/login">
+            If you have an account Login 
+          </button>
+        </div>
+    
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,13 +1,107 @@
-<p>
-  home works!
-</p>
-
-
-
- 
-
-<div class="card">
- 
-    <button type="button" pButton pRipple (click)="mainService.showTopCenter('opopopopo')" label="Top Center" class="p-button-warning"></button>
-    
+<div class="align-items-center flex-nowrap justify-content-between mx-0 position-sticky row top-0 bg-main z-5">
+  <h1 class="w-auto text-white">All Products</h1>
+  <span class="cart" (click)="veiwCart()">
+    <span class="cartCout" *ngIf="productsInCart.length">{{productsInCart.length}}</span>
+  </span>
 </div>
+<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 mx-0">
+  <div class="col p-3 " *ngFor="let product of products">
+    <p-card [header]="product.title" [subheader]="product.category" [style]="{width: '100%'}"
+      styleClass="shadow-2 h-100">
+      <ng-template pTemplate="header">
+        <img alt="Card" class="imgCard" [src]="product.image">
+      </ng-template>
+
+      <p class="pCard">
+        {{ product.description }}
+      </p>
+      <div class="row mx-0">
+        <span class="bg-info rounded-pill text-white w-auto" style="cursor:default">Price : {{product.price}} $</span>
+      </div>
+
+      <div class="row mx-0 mt-3" style="cursor:default">
+        <p-rating [ngModel]="product.rating.rate" [readonly]="true" [stars]="5" class="w-auto"
+          [cancel]="false"></p-rating>({{product.rating.count}} verified ratings)
+      </div>
+
+      <ng-template pTemplate="footer">
+        <button type="button" class="btn btn-main w-100 rounded-pill" *ngIf="product.quantity < 1"
+          (click)="AddToCart(product)">Buy Now</button>
+        <div class="row mx-0 rounded-pill border-main" *ngIf="product.quantity">
+          <button type="button" class="btn btn-main rounded-pill col rounded-end" (click)="plusOne(product)">
+            <fa-icon icon="plus"></fa-icon>
+          </button>
+          <div class="quantityNum">
+            {{product.quantity}}
+          </div>
+          <button type="button" class="btn btn-outline-main rounded-pill col rounded-start" (click)="minusOne(product)">
+            <fa-icon icon="minus"></fa-icon>
+          </button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
+
+
+<p-dialog [(visible)]="showDetails" [modal]="true" [style]="{maxWidth:'85%'}" header="My Cart">
+  <span class="ms-auto clearCart cursor-pointer" (click)="clearCart()">Clear Cart</span>
+
+  <p-table [value]="productsInCart">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Product Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Rate</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product let-index>
+      <tr>
+        <td><img [src]="product.image" style="max-width: 100px; max-height: 100px;" alt=""></td>
+        <td class="text-truncate" [style.width.vw]="30">{{product.title}}</td>
+        <td>{{product.price | currency:'USD'}}</td>
+        <td>{{product.category}}</td>
+        <td><p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating></td>
+        <td>
+          <div>
+          <div class="row mx-0 rounded-pill border-main mx-auto" [style.width.px]="150">
+            <button type="button" class="btn btn-main rounded-pill col rounded-end" (click)="plusOne(product)">
+              <fa-icon icon="plus"></fa-icon>
+            </button>
+            <div class="quantityNum">
+              {{product.quantity}}
+            </div>
+            <button type="button" class="btn btn-outline-main rounded-pill col rounded-start" (click)="minusOne(product)">
+              <fa-icon icon="minus"></fa-icon>
+            </button>
+          </div></div>
+        </td>
+        <td>
+          <fa-icon icon="trash" class="text-danger" (click)="removeItem(index , product.id)"></fa-icon>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="alert alert-danger" *ngIf="!productsInCart.length">
+        There are no products
+      </div>
+      <div class="p-d-flex p-ai-center p-jc-between" *ngIf="productsInCart.length > 0">
+        In total there are {{productsInCart.length }} products.
+      </div>
+    </ng-template>
+  </p-table>
+
+
+
+
+
+
+
+
+
+
+</p-dialog>

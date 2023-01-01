@@ -1,1 +1,60 @@
- 
+.imgCard {
+  height: 100%;
+  max-height: 200px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  padding: 12px;
+}
+.pCard {
+  height: 120px;
+  overflow: auto;
+}
+
+::ng-deep .p-card .p-card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cart {
+  width: 50px;
+  height: 50px;
+  background-image: url(assets/images/cartIcon.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-color: white;
+  border-radius: 50%;
+  margin: 8px;
+  position: relative;
+}
+.cartCout {
+  background-color: mediumseagreen;
+  color: white;
+  padding: 0 6px;
+  border-radius: 9px;
+  position: absolute;
+  top: -5px;
+  font-size: 13px;
+  right: -3px;
+}
+.clearCart{
+    display: block;
+    background-color: red;
+    padding: 0 10px;
+    color: white;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+::ng-deep .p-rating-icon{
+cursor: default !important;
+}
+
+.quantityNum{
+  width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
